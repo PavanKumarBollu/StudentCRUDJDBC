@@ -21,7 +21,7 @@ public class StudentServiceImpl implements IStudentService {
 
 	@Override
 	public String deleteStudent(Integer sId) {
-		return null;
+		return "Pavan";
 	}
 
 }
