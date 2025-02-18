@@ -10,7 +10,7 @@ public class StudentServiceImpl implements IStudentService {
 //		System.out.println(r);
 //	}
 //	
-	
+
 	IStudentDao stdDao = null;
 
 	@Override
@@ -24,7 +24,7 @@ public class StudentServiceImpl implements IStudentService {
 	public Student searchStudent(Integer sId) {
 		stdDao = StudentDaoFactory.getStudentDao();
 		return stdDao.searchStudent(sId);
-	
+
 	}
 
 	@Override
@@ -35,7 +35,9 @@ public class StudentServiceImpl implements IStudentService {
 
 	@Override
 	public String deleteStudent(Integer sId) {
-		return "Pavan";
+		stdDao = StudentDaoFactory.getStudentDao();
+		return stdDao.deleteStudent(sId);
+
 	}
 
 }

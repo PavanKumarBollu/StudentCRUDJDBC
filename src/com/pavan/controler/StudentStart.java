@@ -15,7 +15,21 @@ public class StudentStart {
 
 //		addStudent();
 //		searchStudent();
-		updateStudent();
+//		updateStudent();
+//		deleteStudent();
+
+	}
+
+	public static void deleteStudent() {
+		student = StudentServiceFactory.getStudentService();
+		Integer sId;
+
+		sc = new Scanner(System.in);
+		System.out.print("Enter the Student Id : ");
+		sId = sc.nextInt();
+
+		String result = student.deleteStudent(sId);
+		System.out.println(result);
 
 	}
 
@@ -24,40 +38,37 @@ public class StudentStart {
 		String sName;
 		Integer sAge;
 		String sAddress;
-		
+
 		student = StudentServiceFactory.getStudentService();
 		Student std = null;
-		
+
 		sc = new Scanner(System.in);
 		// taking up the id
 		System.out.print("enter the StudentId : ");
 		sId = sc.nextInt();
 		std = student.searchStudent(sId);
-		
-		
-		
-		System.out.print("Do You want to Update the name "+std.getsName() +" :[Y|N] ");
-		if(sc.next().equalsIgnoreCase("y")) {
-			System.out.print ("Enter the Name : ");
+
+		System.out.print("Do You want to Update the name " + std.getsName() + " :[Y|N] ");
+		if (sc.next().equalsIgnoreCase("y")) {
+			System.out.print("Enter the Name : ");
 			sName = sc.next();
-		}else
+		} else
 			sName = std.getsName();
-		
-		System.out.print("Do You want to Update the Age "+ std.getsAge() +" :[Y|N] ");
-		if(sc.next().equalsIgnoreCase("y")) {
-			System.out.print ("Enter the Age : ");
+
+		System.out.print("Do You want to Update the Age " + std.getsAge() + " :[Y|N] ");
+		if (sc.next().equalsIgnoreCase("y")) {
+			System.out.print("Enter the Age : ");
 			sAge = sc.nextInt();
-		}else
+		} else
 			sAge = std.getsAge();
-		
-		System.out.print("Do You want to Update the Address "+ std.getsAddress() + " :[Y|N] ");
-		if(sc.next().equalsIgnoreCase("y")) {
-			System.out.print ("Enter the Address : ");
+
+		System.out.print("Do You want to Update the Address " + std.getsAddress() + " :[Y|N] ");
+		if (sc.next().equalsIgnoreCase("y")) {
+			System.out.print("Enter the Address : ");
 			sAddress = sc.next();
-		}else
+		} else
 			sAddress = std.getsAddress();
-				
-		
+
 		student.updateStudent(sId, sName, sAge, sAddress);
 	}
 
