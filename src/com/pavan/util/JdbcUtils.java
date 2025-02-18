@@ -11,8 +11,6 @@ import java.util.Properties;
 
 public class JdbcUtils {
 	private static Connection connection = null;
-	private static Statement statemtn = null;
-	private static ResultSet resultSet = null;
 
 	public static Connection getConnection() throws SQLException, IOException {
 		
