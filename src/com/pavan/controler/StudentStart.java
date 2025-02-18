@@ -12,6 +12,45 @@ public class StudentStart {
 	static Scanner sc = null;
 
 	public static void main(String[] args) {
+		boolean flag = false;
+		Integer choice = null;
+		Scanner sc = new Scanner(System.in);
+		System.out.println();
+		System.out.println("Welcome to Student Managment System.");
+
+		while (!flag) {
+			System.out.println();
+			System.out.println("Please Select any of the following options :");
+			System.out.println("*********************************************");
+			System.out.print("Please Enter 1 For Adding 	the Student Details ");
+			System.out.print("Please Enter 2 For Searching 	the Student Details");
+			System.out.print("Please Enter 3 For Updating  	the Student Details");
+			System.out.print("Please Enter 4 For Deleting  	the Student Details");
+			System.out.print("Please Enter 5 For Exit");
+			choice = sc.nextInt();
+			switch (choice) {
+			case 1:
+				addStudent();
+				break;
+			case 2:
+				searchStudent();
+				break;
+			case 3:
+				updateStudent();
+				break;
+			case 4:
+				deleteStudent();
+				break;
+			case 5:
+				flag = true;
+				break;
+			default:
+				System.out.println("Please choose right option");
+				break;
+
+			}
+
+		}
 
 //		addStudent();
 //		searchStudent();
