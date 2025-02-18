@@ -50,8 +50,8 @@ public class StudentStart {
 				break;
 
 			}
-			uInput.close();
-			choice = null;
+//			uInput.close();
+//			choice = null;
 		}
 
 //		addStudent();
@@ -130,7 +130,8 @@ public class StudentStart {
 	}
 
 	public static void addStudent() {
-		int sId = generateStudentId();
+//		int sId = generateStudentId();
+		int sId = ++count;
 		sc = new Scanner(System.in);
 		System.out.print("Enter the name of the Student : ");
 		String sName = sc.next();
@@ -142,7 +143,7 @@ public class StudentStart {
 		student = StudentServiceFactory.getStudentService();
 		String result = student.addStudent(sId, sName, sAge, sAddress);
 		System.out.println(result);
-		sc.close();
+//		sc.close();
 	}
 
 	public static int generateStudentId() {
