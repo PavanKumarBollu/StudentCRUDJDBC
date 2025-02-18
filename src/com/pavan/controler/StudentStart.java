@@ -14,20 +14,21 @@ public class StudentStart {
 	public static void main(String[] args) {
 		boolean flag = false;
 		Integer choice = null;
-		Scanner sc = new Scanner(System.in);
+		
 		System.out.println();
 		System.out.println("Welcome to Student Managment System.");
 
 		while (!flag) {
+			Scanner uInput = new Scanner(System.in);
 			System.out.println();
 			System.out.println("Please Select any of the following options :");
 			System.out.println("*********************************************");
-			System.out.print("Please Enter 1 For Adding 	the Student Details ");
-			System.out.print("Please Enter 2 For Searching 	the Student Details");
-			System.out.print("Please Enter 3 For Updating  	the Student Details");
-			System.out.print("Please Enter 4 For Deleting  	the Student Details");
-			System.out.print("Please Enter 5 For Exit");
-			choice = sc.nextInt();
+			System.out.println("Please Enter 1 For Adding 	the Student Details ");
+			System.out.println("Please Enter 2 For Searching 	the Student Details");
+			System.out.println("Please Enter 3 For Updating  	the Student Details");
+			System.out.println("Please Enter 4 For Deleting  	the Student Details");
+			System.out.println("Please Enter 5 For Exit");
+			choice = uInput.nextInt();
 			switch (choice) {
 			case 1:
 				addStudent();
@@ -49,7 +50,8 @@ public class StudentStart {
 				break;
 
 			}
-
+			uInput.close();
+			choice = null;
 		}
 
 //		addStudent();
@@ -66,7 +68,7 @@ public class StudentStart {
 		sc = new Scanner(System.in);
 		System.out.print("Enter the Student Id : ");
 		sId = sc.nextInt();
-
+		
 		String result = student.deleteStudent(sId);
 		System.out.println(result);
 
@@ -144,7 +146,7 @@ public class StudentStart {
 	}
 
 	public static int generateStudentId() {
-		return count++;
+		return count+1;
 	}
 
 }
